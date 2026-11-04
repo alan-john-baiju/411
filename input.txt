@@ -1,0 +1,17 @@
+int main(){
+    int a=7,b=0,sum;
+    sum=a+b;
+    printf("Sum = %d",sum);
+}
+
+
+
+
+
+
+
+
+
+
+
+

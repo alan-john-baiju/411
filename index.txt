@@ -1,0 +1,11 @@
+Lexical Analyzer using C
+Calculator using LEX & YACC
+Recursive Descent Parser
+// Shift Reduce Parser
+// Intermediate Code Generator
+// Constant Propagation
+Three address code to 8086 Code
+Write a lex program to display the number of lines, words and characters in an input text.
+Write a LEX Program to convert the substring abc to ABC from the given input string.
+Write a lex program to find out total number of vowels and consonants from the given input string.
+Generate a YACC specification to recognize a valid identifier which starts with a letter followed by any number of letters or digits.

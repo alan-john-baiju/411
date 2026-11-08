@@ -32,7 +32,6 @@ void main(){
     char a, b, c, input[100], temp[100];
     printf("Enter the string: ");
     scanf("%s", input);
-    /* Convert id to i */
     for(i = 0; i < strlen(input); i++){
         if(input[i] == 'i' && input[i+1] == 'd'){
             temp[j++] = 'i';
@@ -48,7 +47,6 @@ void main(){
     }
     temp[j] = '$';
     temp[j+1] = '\0';
-    /* Check valid expression */
     for(i = 0; i < j; i++){
         if(need){
             if(temp[i] == 'i')
@@ -69,7 +67,6 @@ void main(){
     }
     if(need || balance != 0)
         goto invalid;
-    /* Operator precedence parsing */
     stack[++top] = '$';
     i = 1;
     while(top != -1){

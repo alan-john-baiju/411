@@ -3,7 +3,6 @@
 char stack[100], input[100];
 int top = 0, pos = 0;
 int reduce(){
-    /* id -> E */
     if(top >= 2 && stack[top-1] == 'i' && stack[top] == 'd'){
         stack[top-1] = 'E';
         top--;
@@ -11,7 +10,6 @@ int reduce(){
         printf("%-15s %-15s id -> E\n", stack, input+pos);
         return 1;
     }
-    /* (E) -> E */
     if(top >= 3 && stack[top-2] == '(' && stack[top-1] == 'E' && stack[top] == ')'){
         stack[top-2] = 'E';
         top -= 2;
@@ -19,7 +17,6 @@ int reduce(){
         printf("%-15s %-15s (E) -> E\n", stack, input+pos);
         return 1;
     }
-    /* E*E -> E */
     if(top >= 3 && stack[top-2] == 'E' && stack[top-1] == '*' && stack[top] == 'E'){
         stack[top-2] = 'E';
         top -= 2;
@@ -27,7 +24,6 @@ int reduce(){
         printf("%-15s %-15s E*E -> E\n", stack, input+pos);
         return 1;
     }
-    /* E+E -> E only if no * follows */
     if(top >= 3 && stack[top-2] == 'E' && stack[top-1] == '+' && stack[top] == 'E' && input[pos] != '*'){
         stack[top-2] = 'E';
         top -= 2;

@@ -38,12 +38,9 @@ int main(){
             }
         }
     }
-    /* Initial DFA state = {q0} */
     states[0][0] = 1;
-    /* Convert NFA to DFA */
     while (front < count){
         for (j = 0; j < m; j++){
-            // Checking Next state for the current DFA state
             for (i = 0; i < n; i++)
                 next[i] = 0;
             for (i = 0; i < n; i++){
@@ -54,7 +51,6 @@ int main(){
                     }
                 }
             }
-            // Check if the next state already exists in the states array
             found = -1;
             for (x = 0; x < count; x++){
                 for (i = 0; i < n; i++){
@@ -66,7 +62,6 @@ int main(){
                     break;
                 }
             }
-            // If the next state is new, add it to the states array
             if (found == -1){
                 found = count;
                 for (i = 0; i < n; i++)
@@ -77,7 +72,6 @@ int main(){
         }
         front++;
     }
-    /* Print DFA */
     printf("\nEquivalent DFA\n\n");
     printf("State\t");
     for (i = 0; i < m; i++)
